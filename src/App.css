@@ -1,0 +1,13 @@
+
+.app
+{
+    text-align: center;
+}
+.c1
+{
+    width: 300px;
+    margin: auto;
+    border: solid orange;
+    padding: 30px;
+    color: blueviolet;
+}
