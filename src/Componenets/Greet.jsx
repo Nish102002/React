@@ -4,7 +4,8 @@ import React from 'react'
 function Greet() {
 
     let cDate= new Date().toLocaleDateString()
-    let ctime=new Date(2025,4,5,24).getHours()
+    let ct = new Date().toLocaleTimeString()
+    let ctime=new Date().toLocaleTimeString()
     let newstyle ={}
     let greet=""
 
@@ -46,12 +47,15 @@ function Greet() {
     }
   return (
    <>
-   <div style={{width:'700px', height:'500px', margin:'auto',border:'5px solid blue',alignItems:'center',display:'flex',marginTop:'150px'}}>
+   <div style={{width:'700px', height:'250px', margin:'auto',border:'5px solid blue',marginTop:'150px'}}>
    
-   <h2 style={{color:'magenta',marginLeft:'40px'}}>Today's Date:- {cDate} </h2>
+   <h2 style={{color:'magenta', margin:"auto" , marginTop:"5px"}} className='text-center'>Today's Date:- {cDate} </h2>
+  <br></br>
+
+    <h2 style={{color:'magenta', margin:"auto" , marginTop:"5px"}} className='text-center'>Current Date:- {ct} </h2>
   <br></br>
    
-   <h3 style={{color:'Bule',margin:'200px',marginRight:'0px'}}> Welcome Students,<span style={newstyle}>{greet} </span></h3>
+   <h3 style={{color:'Bule'}} className='text-center'> Welcome Students,<span style={newstyle}>{greet} </span></h3>
 
 
    </div>

@@ -48,35 +48,38 @@ function Calculator() {
   return (
     <>
     <div className='container mt-3 p-4'></div>
-    <form>
-        <h2 className='text-danger'>Calculator</h2>
-        <table>
+    <form style={{margin:"auto",border:"2px solid black",width:"900px",height:"300px"}}>
+        <h2 className='text-danger text-center'>Calculator</h2>
+        <table style={{marginLeft:"15px"}}>
             <br></br>
             <tr>
-                <td>Enter First Number:- </td>
-                <td><input type="text" name="fno"  onChange={inputHandler1}></input> </td>
+                <td >Enter First Number:- <input type="text" name="fno"  onChange={inputHandler1} style={{marginLeft:"23px"}}></input> </td>
+                <br></br><br></br>
+
             </tr>
             <tr>
-                <td>Enter Second Number:- </td>
-                <td><input type="text" name="sno"  onChange={inputHandler}></input> </td>
-            </tr>
-            <tr>
-                <td>Result:-{result}</td>
+                <td>Enter Second Number:- <input type="text" name="sno"  onChange={inputHandler}></input> </td>
                 <td></td>
-            
-            <tr>
-                <td></td>
-                <td><input type="button" className='btn btn-outline-primary' onClick={clickHandler} value="Additon"></input></td>
-
-                <td><input type="button" className='btn btn-outline-primary' onClick={clearHandler} value="clear"></input></td>
-
-                <td><input type="button" className='btn btn-outline-primary' onClick={clickHandler1} value="Substraction"></input></td>
-                <td><input type="button" className='btn btn-outline-primary' onClick={clickHandler2} value="Multiplication"></input></td>
-                <td><input type="button" className='btn btn-outline-primary' onClick={clickHandler3} value="Division"></input></td>
-                <td><input type="button" className='btn btn-outline-primary' onClick={clickHandler4} value="Factorial"></input></td>
                 
             </tr>
+            <tr>
+                
+                <td>Result:-{result}</td>
+                <td></td>
             </tr>
+            <br></br><br></br>
+                
+                <input type="button" className='btn btn-outline-primary' onClick={clickHandler} value="Additon"></input>&nbsp;
+
+                <input type="button" className='btn btn-outline-primary' onClick={clearHandler} value="clear"></input>&nbsp;
+
+                <input type="button" className='btn btn-outline-primary' onClick={clickHandler1} value="Substraction"></input>&nbsp;
+                <input type="button" className='btn btn-outline-primary' onClick={clickHandler2} value="Multiplication"></input>&nbsp;
+                <input type="button" className='btn btn-outline-primary' onClick={clickHandler3} value="Division"></input>&nbsp;
+                <input type="button" className='btn btn-outline-primary' onClick={clickHandler4} value="Factorial"></input>&nbsp;
+                
+            
+            
         </table>
     </form>
     </>

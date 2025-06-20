@@ -3,6 +3,11 @@ import StateEx from "./Componenets/StateEx"
 import Calculator from "./Componenets/Calculator"
 import FormStu from "./Componenets/FormStu"
 import Operation from "./Componenets/Operation"
+import Greet from "./Componenets/Greet"
+import ObjectState from "./Componenets/ObjectState"
+import StateExamples from "./Componenets/StateExamples"
+import ConditionalRender from "./Componenets/ConditionalRender"
+import Clock from "./Componenets/Clock"
 
 
 
@@ -57,9 +62,14 @@ function App()
           <br></br><br></br>
           <div className="btn btn-outline-primary" onClick={square}>square A</div>
     </div>
+    <Greet></Greet>
     <Calculator></Calculator>
     <FormStu></FormStu>
     <Operation></Operation>
+    <ObjectState></ObjectState>
+    <StateExamples></StateExamples>
+    <ConditionalRender></ConditionalRender>
+    <Clock></Clock>
     {/* <StateEx></StateEx> */}
     </>
   )
@@ -231,3 +241,11 @@ export default App
 //event is a internal arguement works on onchange means 
 // target specify on which particular text box it is working on
 //value textbox ka value 
+
+//Object State
+//setuser({user,[name]:value})
+//only store updated value
+//three dots are use before
+//setuser({...user,[name]:value})
+//this three dots stores all the data
+//it is spread operator
