@@ -8,6 +8,8 @@ import ObjectState from "./Componenets/ObjectState"
 import StateExamples from "./Componenets/StateExamples"
 import ConditionalRender from "./Componenets/ConditionalRender"
 import Clock from "./Componenets/Clock"
+import Validation from "./Componenets/Validation"
+import FormValidation from "./Componenets/FormValidation"
 
 
 
@@ -70,6 +72,8 @@ function App()
     <StateExamples></StateExamples>
     <ConditionalRender></ConditionalRender>
     <Clock></Clock>
+    <Validation></Validation>
+   <FormValidation></FormValidation>
     {/* <StateEx></StateEx> */}
     </>
   )
@@ -172,6 +176,8 @@ export default App
 // Q21.Exxplain event.target.value
 // Q22.Explain Event handling in react
 // Q23.What is the use of useState hook
+// Q24.Explain component based life cycle method
+// Q25.How to achive component based life cycle method in functional based component
 
 
 //filter is always writeen in js because wo array deta hai aur us array ko render karne ke liye map lagta hai
@@ -249,3 +255,28 @@ export default App
 //setuser({...user,[name]:value})
 //this three dots stores all the data
 //it is spread operator
+
+//cond && state 1 =short circuit operator
+//cond ? true : false
+
+//Hooks- provide extra functionality on functional based component
+//same as function
+//1.predefined hooks
+//2.custom hooks - user defined
+//Hooks-1.useState --to state define 
+//      2.useEffect -- to achieve life cycle method
+//      3.useRef
+//      4.useContext
+//      5.useCallback
+//      6.useMemo
+//      7.useParams
+//      8.useNavigate
+//      9.useReducer
+//     10.useSelector
+
+//useEffect- 1.to achieve life cycle methods in functional based component
+//           2.to perform side effect task like calling rest api,Dom manipulation,time related functionality-setInterval,
+// syntax= useEfffect(()=>{
+//  },[dependency]) 
+//Dom ke upar component load hota hai tab useEffect chalta hai
+//component get uploaded on Dom through useEffect
