@@ -10,71 +10,136 @@ import ConditionalRender from "./Componenets/ConditionalRender"
 import Clock from "./Componenets/Clock"
 import Validation from "./Componenets/Validation"
 import FormValidation from "./Componenets/FormValidation"
+import A from "./Componenets/A"
+import UseMemoEx from "./Componenets/UseMemoEx"
+import Counter from "./Componenets/Counter"
+import UserefEx from "./Componenets/UserefEx"
+import { Link, Route, Routes } from "react-router-dom"
+import Main from "./Componenets/Main"
+import About from "./Componenets/About"
+import Services from "./Componenets/Services"
+import Home from "./Componenets/Home"
+import PageNotFound from "./Componenets/PageNotFound"
+import Profile from "./Componenets/Profile"
+import User from "./Componenets/User"
+import Admin from "./Componenets/Admin"
+import { useNavigate } from "react-router-dom"
+import Users from "./Componenets/Users"
+import Navigation from "./Componenets/Navigation"
 
 
 
+function App() {
+  const [Status, setStatus] = useState(true)
 
-function App()
-{
+  var [a, setA] = useState(2)
 
-  var [a,setA]=useState(2)
-
-  function increment(){
-    if(a<10){
-    setA(a+1)
+  function increment() {
+    if (a < 10) {
+      setA(a + 1)
     }
-    else{
+    else {
       alert("You cant excced")
       setA(0)
     }
   }
-  function decrement(){
-    if(a>0){
-    setA(a-1)
-    console.log(a)
-    }else{
+  function decrement() {
+    if (a > 0) {
+      setA(a - 1)
+      console.log(a)
+    } else {
       alert("you cant decrese")
     }
   }
-  function fact(){
-    let f=1
-    for(let i=1; i<=a; i++){
-        f=f*i
+  function fact() {
+    let f = 1
+    for (let i = 1; i <= a; i++) {
+      f = f * i
     }
     setA(f)
   }
-  function cube(){
-    setA(a*a*a)
+  function cube() {
+    setA(a * a * a)
   }
-  function square(){
-    setA(a*a)
+  function square() {
+    setA(a * a)
   }
-  return(
+  const navigate = useNavigate()
+  const clickHandler = () => {
+    navigate('/Services')
+  }
+  const clickHandler1 = () => {
+
+    navigate('/users')
+  }
+  return (
     <>
-    <div className="text-center mt-3">
-    <br></br>
-    <h3>{a}</h3>
-    <div className="btn btn-outline-primary" onClick={increment}>increment A</div>
-    <br></br><br></br>
+      <div className="text-center mt-3">
+        <br></br>
+        <h3>{a}</h3>
+        <div className="btn btn-outline-primary" onClick={increment}>increment A</div>
+        <br></br><br></br>
         <div className="btn btn-outline-primary" onClick={decrement}>decrement A</div>
         <br></br><br></br>
-         <div className="btn btn-outline-primary" onClick={fact}>fact A</div>
-         <br></br><br></br>
-          <div className="btn btn-outline-primary" onClick={cube}>cube A</div>
-          <br></br><br></br>
-          <div className="btn btn-outline-primary" onClick={square}>square A</div>
-    </div>
-    <Greet></Greet>
-    <Calculator></Calculator>
-    <FormStu></FormStu>
-    <Operation></Operation>
-    <ObjectState></ObjectState>
-    <StateExamples></StateExamples>
-    <ConditionalRender></ConditionalRender>
-    <Clock></Clock>
-    <Validation></Validation>
-   <FormValidation></FormValidation>
-    {/* <StateEx></StateEx> */}
+        <div className="btn btn-outline-primary" onClick={fact}>fact A</div>
+        <br></br><br></br>
+        <div className="btn btn-outline-primary" onClick={cube}>cube A</div>
+        <br></br><br></br>
+        <div className="btn btn-outline-primary" onClick={square}>square A</div>
+      </div>
+      <Greet></Greet>
+      <Calculator></Calculator>
+      <FormStu></FormStu>
+      <Operation></Operation>
+      <ObjectState></ObjectState>
+      <StateExamples></StateExamples>
+      <ConditionalRender></ConditionalRender>
+      <Clock></Clock>
+      <Validation></Validation>
+      <br></br>
+      <FormValidation></FormValidation>
+      <br></br>
+      <A></A>
+      <br></br>
+      <UseMemoEx></UseMemoEx>
+      <br></br>
+      <div className="text-center">
+        <button className="btn btn-warning" onClick={() => setStatus(!Status)}>Toggle Button</button>
+        {Status ? <Counter></Counter> : ""}
+        {/* <StateEx></StateEx>  */}
+        <br></br>
+        <UserefEx></UserefEx>
+        <hr></hr>
+        <div className="container">
+          <Link to="home">Home</Link>&nbsp;&nbsp;
+          <Link to="about">About</Link>&nbsp;&nbsp;
+          <Link to="main">Main</Link>&nbsp;&nbsp;
+          <Link to="services">Services</Link>&nbsp;&nbsp;
+          <Link to="profile">Profile</Link>&nbsp;&nbsp;
+
+
+
+        </div>
+        <br></br>
+        <button className="btn btn-primary" onClick={clickHandler}>Show services</button>&nbsp;&nbsp;
+        <button className="btn btn-primary" onClick={clickHandler1}>Show User</button>&nbsp;&nbsp;
+        <br></br>
+        <Routes>
+          <Route path='home' element={<Home></Home>}></Route>
+          <Route path='Main' element={<Main></Main>}></Route>
+          <Route path='About' element={<About></About>} ></Route>
+          <Route path='Services' element={<Services></Services>} ></Route>
+          <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
+          <Route path='Profile' element={<Profile></Profile>}>
+            <Route path="User" element={<User></User>}></Route>
+            <Route path="Admin" element={<Admin></Admin>}></Route>
+          </Route>
+          <Route path="users" element={<Users></Users>}></Route>
+
+        </Routes>
+      </div>
+      <br></br>
+      <Navigation></Navigation>
     </>
   )
 }
@@ -88,11 +153,11 @@ export default App
 //inedx.html 2.main 3.app.jsx 4.first
 //all tags have closing tags
 //object in java script syntax = let newstyle={
-    //     color:'blue',
-    //     fontFamily:'Arial',
-    //     textTransform:'uppercase',
-    //     textAlign:'center'
-    // }
+//     color:'blue',
+//     fontFamily:'Arial',
+//     textTransform:'uppercase',
+//     textAlign:'center'
+// }
 // import './index.css' .- meaning from currentt working directory 
 // three styles of applying css 1.inline css, 2.css from object,3.external css
 // jsx=js+html 
@@ -178,6 +243,16 @@ export default App
 // Q23.What is the use of useState hook
 // Q24.Explain component based life cycle method
 // Q25.How to achive component based life cycle method in functional based component
+// Q26.How to optimze react application performance
+// Q27.What is props drilling problem in react & how to overcome this problem
+// Q28.What is difference between useEffect and useState hooks?
+// Q29.Difference between controlled and uncontrolled components inn React?
+// Q30.How can we add css styling to react components?
+// Q31.What are synthetic events in react?
+// Q32.What is strict mode in react?
+// Q33.What are the rules of React Hooks?
+// Q34.How to handle common lifestyle methods in React functional components?
+// Q35.What are refs in React?
 
 
 //filter is always writeen in js because wo array deta hai aur us array ko render karne ke liye map lagta hai
@@ -280,3 +355,45 @@ export default App
 //  },[dependency]) 
 //Dom ke upar component load hota hai tab useEffect chalta hai
 //component get uploaded on Dom through useEffect
+//through use effect we can do mounting,updatinng,ampunting phase of life cycle
+
+//useRef - use for dom manipulation
+//useCallback,useMemo - improve performance of react application
+
+//Props drilling problem - use useContext is use to overcome this props drilling problem
+
+//How to improve react application performance -- useCallback,useMemo,HOC,lazy loading,custom hooks 
+//Component life cycle method -- 1.initialization
+//                               2.mountig
+//                               3.updation
+//                               4.unmounting
+
+// useEffect((callback)=>{
+//
+//    },[dependancy array])
+
+//to install router--npm install react-router-dom
+//Rounting-- navigating between pages
+//React Rounting--
+
+//Types of Rounting --
+//1.Basic Rounting
+//2.Child Rounting
+//3.Params Rounting
+//4.Wild card Rounting
+//5.Redirect Rounting
+
+
+//Page not found --Wildcard route 
+//** =WildCard route to handle own exception
+
+//BrowserRouter-Wraps the app and enables the history API for managing sessions
+//Routes-Container for all Route components
+//Route-Defines the path and component tto render
+//Link-used for navigation without page refresh
+//Navigate-Redirects to another route programmatically
+
+//Components in React Router-
+//There are two types of router components:
+//<BrowserRouter>-it is used for handling the dynamic URL
+//<HashRouter>-it is used for hadling the static request

@@ -2,7 +2,7 @@ import React, { useState,useRef } from 'react'
 
 function Clock() {
 
-    // let t = new Date().toLocaleTimeString()
+     let t = new Date().toLocaleTimeString()
     const interval = useRef(null)
     const [ctime,setCTime] = useState()
 

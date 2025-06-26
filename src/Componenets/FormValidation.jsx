@@ -14,7 +14,7 @@ function FormValidation() {
     }
     let pattern=/\S+@\S+\.\S+/
     let upattern=/^([A-Z]{1,1})+([a-z]{2,6})/
-    const[error,seterror]=useState()
+    const[error,seterror]=useState([])
 
     function handleSubmit(e){
         e.preventDefault()
@@ -43,7 +43,7 @@ function FormValidation() {
           }
           seterror(Validation)
 
-          if (object.keys((Validation.length===0)))
+          if (Object.keys((Validation.length===0)))
           {
             alert("Form Submitted Successfully")
           }
@@ -51,10 +51,11 @@ function FormValidation() {
   return (
     <>
         <div className='container'>
-    <form onSubmit={handleSubmit}>
+    <form style={{margin:"auto",border:"2px solid black",width:"400px",height:"300px"}} onSubmit={handleSubmit}>
       <div>
-        <label>Username:</label>
+        <label style={{marginLeft:'10px', marginTop:'20px'}}>Username:</label>
         <input
+          style={{marginLeft:'10px'}}
           type="text"
           name="username"
           placeholder='username'  
@@ -65,8 +66,9 @@ function FormValidation() {
          
       </div>
       <div>
-        <label>Email:</label>
+        <label style={{marginLeft:'10px', marginTop:'20px'}}>Email:</label>
         <input
+          style={{marginLeft:'10px'}}
           type="email"
           name="email"
           placeholder='example@gmail.com'
@@ -76,8 +78,9 @@ function FormValidation() {
           {error.emial && <p className='text-danger'>{error.email}</p>}
       </div>
       <div>
-        <label>Password:</label>
+        <label style={{marginLeft:'10px', marginTop:'20px'}}>Password:</label>
         <input
+          style={{marginLeft:'10px'}}
           type="password"
           name="password"
           placeholder='******'
@@ -86,8 +89,9 @@ function FormValidation() {
          {error.password && <p className='text-danger'>{error.password}</p>}
       </div>
       <div>
-        <label>Confirm Password:</label>
+        <label style={{marginLeft:'10px', marginTop:'20px'}}>Confirm Password:</label>
         <input
+          style={{marginLeft:'10px'}}
           type="password"
           name="confirmPassword"
           placeholder='******'
@@ -95,7 +99,7 @@ function FormValidation() {
         />
        {error.confirmPassword && <p className='text-danger'>{error.confirmPassword}</p>}
       </div>
-      <button type="submit" className='btn btn-primary'>Submit</button>
+      <button type="submit" className='btn btn-primary' style={{marginLeft:'150px', marginTop:'20px'}}>Submit</button>
     </form>
 
 
