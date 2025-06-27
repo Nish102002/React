@@ -4,6 +4,8 @@ import Employe from './Employe'
 import Book from './Book'
 import Product from './Product'
 import Home from './Home'
+import EmployeeDetail from './EmployeeDetail'
+import PageNotFound from './PageNotFound'
 
 function Navigation() {
     return (
@@ -25,7 +27,7 @@ function Navigation() {
                                     <Link class="nav-link" to="product">Product</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="employe">Employe</Link>
+                                    <Link class="nav-link" to="e">Employe</Link>
                                 </li>
                                 <li class="nav-item">
                                     <Link class="nav-link" to="book">Book</Link>
@@ -42,8 +44,10 @@ function Navigation() {
             <Routes>
                 <Route path="home" element={<Home></Home>}></Route>
                 <Route path="product" element={<Product></Product>}></Route>
-                <Route path="employe" element={<Employe></Employe>}></Route>
+                <Route path="e" element={<Employe></Employe>}></Route>
                 <Route path="book" element={<Book></Book>}></Route>
+                <Route path="e/:empid" element={<EmployeeDetail></EmployeeDetail>}></Route>
+                <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
             </Routes>
         </>
     )
