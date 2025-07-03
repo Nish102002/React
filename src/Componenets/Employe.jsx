@@ -22,7 +22,7 @@ function Employe() {
     {
         emp.map((e)=>{
             return(
-                <Link to={'${e.empid}'}><li>{e.empid}</li></Link>
+                <Link to={`${e.empid}`}>{e.empid}</Link>
             )
         })
     } 

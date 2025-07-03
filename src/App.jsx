@@ -26,6 +26,7 @@ import Admin from "./Componenets/Admin"
 import { useNavigate } from "react-router-dom"
 import Users from "./Componenets/Users"
 import Navigation from "./Componenets/Navigation"
+import LazyComp from "./Componenets/LazyComp"
 
 
 
@@ -140,6 +141,8 @@ function App() {
       </div>
       <br></br>
       <Navigation></Navigation>
+      <br></br>
+      
     </>
   )
 }
@@ -253,6 +256,11 @@ export default App
 // Q33.What are the rules of React Hooks?
 // Q34.How to handle common lifestyle methods in React functional components?
 // Q35.What are refs in React?
+// Q36.**Props as callback?
+// Q37.**Lazy Loading?
+// Q38.**Code Splitting?
+// Q39.**Synthetic Event?
+// Q40.**dynamic import?
 
 
 //filter is always writeen in js because wo array deta hai aur us array ko render karne ke liye map lagta hai
@@ -397,3 +405,10 @@ export default App
 //There are two types of router components:
 //<BrowserRouter>-it is used for handling the dynamic URL
 //<HashRouter>-it is used for hadling the static request
+
+//Callback--pass function as arguement to another function
+
+//Lazy Loading- it is technique to improve react appliaction perfoemance and user experience it is used to achive dynamic
+// import components concepts .React.Lazy()--This function is useful to import components dynamically(performance optimization tool)
+
+//Dynamic import--<React.Lazy(),<Suspense>
