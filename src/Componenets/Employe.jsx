@@ -4,12 +4,31 @@ import { Link } from 'react-router-dom'
 
 function Employe() {
          const emp = [
-       { "empid": 101, "empname": "Amit Sharma" },
-  { "empid": 102, "empname": "Priya Verma" },
-  { "empid": 103, "empname": "Rahul Joshi" },
-  { "empid": 104, "empname": "Sneha Kulkarni" },
-  { "empid": 105, "empname": "Vikram Singh" }
-
+      {
+    "empid": "E001",
+    "empname": "Alice Johnson",
+    "image": "https://picsum.photos/id/1011/200/200"
+  },
+  {
+    "empid": "E002",
+    "empname": "Bob Smith",
+    "image": "https://picsum.photos/id/1012/200/200"
+  },
+  {
+    "empid": "E003",
+    "empname": "Charlie Davis",
+    "image": "https://picsum.photos/id/1013/200/200"
+  },
+  {
+    "empid": "E004",
+    "empname": "Diana Ross",
+    "image": "https://picsum.photos/id/1014/200/200"
+  },
+  {
+    "empid": "E005",
+    "empname": "Ethan Brown",
+    "image": "https://picsum.photos/id/1015/200/200"
+  }
     ]   
 
  
@@ -17,18 +36,44 @@ function Employe() {
   return (
     
    <>
-    <div className='container'>
-        <ul>
-    {
-        emp.map((e)=>{
-            return(
-                <Link to={`${e.empid}`}>{e.empid}</Link>
-            )
-        })
-    } 
-    </ul>
+   <div
+        style={{
+          display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      gap: '20px',
+      padding: '20px',
+        }}
+      >
+        {emp.map((e) => {
+          return (
+            <div
+              className="card"
+              style={{
+                width: "30%",
+                minWidth: "250px",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                borderRadius: "10px",
+                overflow: "hidden",
+              }}
+            >
+              <img
+                className="card-img-top"
+                src={e.image}
+                alt="Card image cap"
+                style={{ width: "100%", height: "250px", objectFit: "cover" }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">Employee Id:-{e.empid}</h5>
+                <p className="card-text">
+                  <b>Name</b>:-{e.empname}
+                </p>
 
-    </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   )
 }

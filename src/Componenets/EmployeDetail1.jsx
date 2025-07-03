@@ -32,23 +32,31 @@ function EmployeDetail1() {
 ];
 const filterEmp=emp.filter((e)=>e.empname==empname)
   return (
-    filterEmp.length!==0?
-    (<div className='container mt-4 w-50' style={{border:'3px solid black'}}>
-   
- 
-    {
-        filterEmp.map((e)=>{
-            return(
-                <>
-                <h3>Empname:- {e.empname}</h3>
-                <p>EmpId:- {e.empid}</p>
-                </>
-            )
-        })
-    }
-   </div>
-   
-  ):<div style={{textAlign:'center'}}>Employe Not Found</div>
+ filterEmp.length !== 0 ? 
+
+    ( <div className='container mt-4 w-75 m-auto '>
+                <br></br>
+                     {
+                        filterEmp.map((e) => {
+                            return (
+                                <>
+                                    <div className="card" style={{width:"25rem"}}>
+                                        <img className="card-img-top" src={e.image} alt="Card image cap" />
+                                            <div className="card-body">
+                                                <h5 className="card-title">Employee Name:-{e.empname}</h5>
+                                                <p className="card-text"><b>Name</b>:-{e.empid}</p>
+
+                                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
+
+                </div>)
+
+                : <h1 className='text-danger text-center mt-3'>Employee Not Found</h1>
 )
 }
 export default EmployeDetail1
